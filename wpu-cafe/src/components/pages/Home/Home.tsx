@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import styles from './Home.module.css'
+import Button from '../../ui/Button'
 
 const Home = () => {
     return (
@@ -9,5 +10,8 @@ const Home = () => {
             <Button>Login</Button>
             </Link>
         </main>
-    )
-}
+    );
+};
+
+
+export default Home;
