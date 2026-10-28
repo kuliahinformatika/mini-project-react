@@ -10,7 +10,7 @@ interface PropTypes {
   className?: string;
 }
 
-const input = (props: PropTypes) => {
+const Input = (props: PropTypes) => {
   
   const {
     label,
@@ -36,3 +36,5 @@ const input = (props: PropTypes) => {
     </label>
   );
 };
+
+export default Input;
