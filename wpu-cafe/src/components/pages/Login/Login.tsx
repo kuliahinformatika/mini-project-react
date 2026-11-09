@@ -8,9 +8,9 @@ import { Navigate } from "react-router";
 
 
 const Login = () => {
-    const handleLogin = (event: FormEvent) => {
+    const handleLogin = async (event: FormEvent) => {
         event.preventDefault();
-        const form = event.target as HTMLFormElelement;
+        const form = event.target as HTMLFormElement;
         const payload = {
             email: form.email.value,
             password: form.password.value,
@@ -18,22 +18,36 @@ const Login = () => {
         const result = await login(payload);
         setLocalStorage('auth', result.token);
 
-        return <Navigate to='/orders' replace
+        return <Navigate to='/orders' replace />
     };
 
     
-    return (
-        <main className={styles.login}>
-            <div className={styles.card}>
-                <h1 className={styles.title}>Login</h1>
-                <form className={styles.form} onSubmit={handleLogin}>
-                    <Input label="Password" id="Password" type="password" name="Password" placeholder="Insert Password" required/> 
-                    
-                    <Button type="submit">Login</Button> 
-                <form/>
-            </div>
-        </main>
-    )
+   return (
+    <main className={styles.login}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Login</h1>
+        <form className={styles.form} onSubmit={handleLogin}>
+          <Input 
+            label="Email" 
+            id="email" 
+            type="email" 
+            name="email" 
+            placeholder="Insert Email"  
+            required 
+          />
+          <Input 
+            label="Password" 
+            id="password" 
+            type="password" 
+            name="password" 
+            placeholder="Insert Password" 
+            required 
+          />
+          <Button type="submit">Login</Button>
+        </form>
+      </div>
+    </main>
+  );
 };
 
 export default Login

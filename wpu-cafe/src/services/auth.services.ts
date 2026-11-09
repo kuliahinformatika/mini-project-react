@@ -1,6 +1,6 @@
 import { environment } from "../constants/environment";
 import type { ILogin } from "../types/auth";
-import {fetchAPI} from "../utils/fetch";
+import { fetchAPI } from "../utils/fatch";
 
 
 export const login = async (payload: ILogin) => {
